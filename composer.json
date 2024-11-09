@@ -1,40 +1,42 @@
 {
-    "name": "beyondcode/laravel-ask-database",
-    "description": "Use natural language and AI to query your database from Laravel",
+    "name": "mkreftsymfonia/laravel-eloquent-ai",
+    "description": "Laravel Eloquent AI is a Laravel package that allows asking an AI for database queries.",
     "keywords": [
-        "beyondcode",
+        "mkreftsymfonia",
         "laravel",
-        "laravel-ask-database"
+        "laravel-ask-database",
+        "ai",
+        "ai-query-generator"
     ],
     "homepage": "https://github.com/beyondcode/laravel-ask-database",
     "license": "MIT",
     "authors": [
         {
-            "name": "Marcel Pociot",
-            "email": "marcel@beyondco.de",
+            "name": "Mateusz",
+            "email": "example@me.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "illuminate/contracts": "^10.0",
-        "illuminate/database": "^10.43",
-        "openai-php/laravel": "^0.3.1",
+        "php": "^8.3",
+        "illuminate/contracts": "^11.0",
+        "illuminate/database": "^11.00",
+        "openai-php/laravel": "^v0.10.2",
         "spatie/laravel-package-tools": "^1.14.0",
         "spatie/once": "^3.1"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
         "mockery/mockery": "^1.5",
-        "nunomaduro/collision": "^6.0",
+        "nunomaduro/collision": "^v8.3.0",
         "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^7.0|^8.0",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^2.34.7",
+        "pestphp/pest-plugin-laravel": "^2.4",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "psr-4": {
@@ -58,7 +60,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
