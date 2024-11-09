@@ -20,7 +20,7 @@ DB::ask('How many users do we have on the "pro" plan?');
 You can install the package via composer:
 
 ```bash
-composer require beyondcode/laravel-ask-database
+composer require mkreftsymfonia/laravel-eloquent-ai
 ```
 
 You can publish the config file with:
