@@ -26,4 +26,10 @@ return [
      * provided question.
      */
     'max_tables_before_performing_lookup' => env('ASK_DATABASE_MAXIMUM_TABLES', 15),
+
+    'model' => env('ASK_DATABASE_MODEL', 'text-davinci-003'),
+
+    'temperature' => env('ASK_DATABASE_TEMPERATURE', 0.7),
+
+    'max_tokens' => env('ASK_DATABASE_MAX_TOKENS', 100),
 ];

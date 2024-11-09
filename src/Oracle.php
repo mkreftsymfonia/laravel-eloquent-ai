@@ -11,10 +11,16 @@ use OpenAI\Client;
 class Oracle
 {
     protected string $connection;
+    protected string $model;
+    protected string $temperature;
+    protected int $maxTokens;
 
     public function __construct(protected Client $client)
     {
         $this->connection = config('ask-database.connection');
+        $this->model = config('ask-database.model');
+        $this->temperature = config('ask-database.temperature');
+        $this->maxTokens = config('ask-database.max_tokens');
     }
 
     public function ask(string $question): string
@@ -25,7 +31,7 @@ class Oracle
 
         $prompt = $this->buildPrompt($question, $query, $result);
 
-        $answer = $this->queryOpenAi($prompt, "\n", 0.7);
+        $answer = $this->queryOpenAi($prompt, "\n");
 
         return Str::of($answer)
             ->trim()
@@ -46,13 +52,13 @@ class Oracle
         return $query;
     }
 
-    protected function queryOpenAi(string $prompt, string $stop, float $temperature = 0.0)
+    protected function queryOpenAi(string $prompt, string $stop)
     {
         $completions = $this->client->completions()->create([
-            'model' => 'text-davinci-003',
+            'model' => $this->model,
             'prompt' => $prompt,
-            'temperature' => $temperature,
-            'max_tokens' => 100,
+            'temperature' => $this->temperature,
+            'max_tokens' => $this->maxTokens,
             'stop' => $stop,
         ]);
 

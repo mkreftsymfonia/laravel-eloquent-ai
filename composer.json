@@ -8,7 +8,8 @@
         "ai",
         "ai-query-generator"
     ],
-    "homepage": "https://github.com/beyondcode/laravel-ask-database",
+    "version": "1.0.0",
+    "homepage": "",
     "license": "MIT",
     "authors": [
         {
